@@ -39,3 +39,12 @@ async function getVendorsForEvent()
     var vendors = await getVendors(eventId);
     displayVendors(vendors);
 }
+
+var urlParams = new URLSearchParams(window.location.search);
+var eventIdQueryParameter = urlParams.get('event-id');
+
+if (eventIdQueryParameter !== undefined)
+{
+    document.getElementById("event-id").value = eventIdQueryParameter;
+    getVendorsForEvent();
+}

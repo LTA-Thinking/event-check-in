@@ -1,20 +1,44 @@
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet" type="text/css" media="all">
+    </head>
     <body>
-        <div>
-            <div>
-                <h2>New Event</h2>
-                <textarea>Name</textarea>
-                <textarea>Location</textarea>
-                <button>Submit</button>
+        <div class="vendor-pop-up hidden" id="vendor-pop-up">
+            <div class="vendor-form">
+                <h2>Add Vendor</h2>
+                <lable>Event: </lable>
+                <input type="text" id="vendor-event-name" readonly/>
+                <label>Vendor Name:</label>
+                <input type="text" id="vendor-name" />
+                <button onClick="addVendorToEvent()">Submit</button>
+                <button onClick="cancelAddVendor()">Cancel</button>
             </div>
+        </div>
+        <div class="main-content">
+            <div class="event-form">
+                <h2>New Event</h2>
+                <label>Name:</label>
+                <input type="text" id="event-name"/>
+                <br>
+                <label>Location:</label>
+                <input type="text" id="event-location"/>
+                <br>
+                <button onClick="addEvent()">Submit</button>
+            </div>
+            <hr>
             <table id="event-list">
                 <tr>
                     <th>Event Name</th>
                     <th>ID</th>
                     <th>Location</th>
+                    <th>Add Vendor</th>
                 </tr>
             </table>
         </div>
         <a href="./index.html">Home</a>
+        <script src="./js/keys.js"></script>
+        <script src="./js/manage-events.js"></script>
     </body>
 </html>

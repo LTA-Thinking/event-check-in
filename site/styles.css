@@ -1,0 +1,117 @@
+.main-content
+{
+    margin: auto;
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+.main-content h1
+{
+    text-align: center;
+}
+
+.search-input 
+{
+    display: inline-block;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.event-form
+{
+    margin-left: 20px;
+}
+
+.event-form h2
+{
+    margin-bottom: 0;
+}
+
+.event-form label
+{
+    display: inline-block;
+    min-width: 70px;
+}
+
+.qr-display
+{
+     background-color: white;
+     text-align: center;
+}
+
+.qr-display img
+{
+    margin: auto;
+}
+
+.vendor-pop-up
+{
+    background-color: rgba(100,100,100,0.6);
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.vendor-form
+{
+    background-color: lightgray;
+    margin: auto;
+    width: min-content;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.vendor-form h2
+{
+    margin-top: 0;
+}
+
+body
+{
+    background-color: lightsalmon;
+}
+
+table
+{
+    margin: auto;
+    padding-bottom: 20px;
+    border-spacing: 0px;
+}
+
+th
+{
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 3px solid black;
+    text-align: center;
+    padding: 3px 10px;
+}
+
+th:first-child
+{
+    border-left: 1px solid black;
+}
+
+td
+{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 3px 10px;
+    text-align: center;
+}
+
+td:first-child
+{
+    border-left: 1px solid black;
+}

@@ -1,11 +1,18 @@
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet" type="text/css" media="all">
+    </head>
     <body>
-        <div>
-            <span>
-                <textarea id="location-input">Location</textarea>
+        <div class="main-content">
+            <span class="search-input">
+                <label>Location:</label>
+                <input type="text" id="location-input"></input>
                 <button onClick="generateQrCode()">Submit</button>
             </span>
-            <div>
+            <hr>
+            <div class="qr-display">
                 <h1 id="qr-code-label"></h1>
                 <img width="500" id="qr-code" />
             </div>
