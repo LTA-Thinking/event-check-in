@@ -24,11 +24,11 @@ namespace ltat.eventManagement
             var client = TableClientFactory.CreateTableClient("Events");
 
             var results = client.QueryAsync<EventTable>(evt => evt.PartitionKey == "event");
-            List<EventTable> eventList = new();
+            List<EventOutput> eventList = new();
 
             await foreach (EventTable evt in results)
             {
-                eventList.Add(evt);
+                eventList.Add(new EventOutput(evt.Name, evt.Location, evt.RowKey));
             }
 
             string response = JsonSerializer.Serialize(eventList);
@@ -36,4 +36,5 @@ namespace ltat.eventManagement
             return new OkObjectResult(response);
         }
     }
+    public record EventOutput(string Name, string Location, string Id);
 }

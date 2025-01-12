@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using QRCoder;
-using FromBodyAttribute = Microsoft.Azure.Functions.Worker.Http.FromBodyAttribute;
 
 namespace ltat.eventManagement
 {
@@ -19,10 +18,12 @@ namespace ltat.eventManagement
         }
 
         [Function("GenerateLocationLabel")]
-        public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequest req, [FromBody] Location location)
+        public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req)
         {
+            string location = req.Query["location"];
+
             string baseUrl = System.Environment.GetEnvironmentVariable("QRCode_baseUrl", EnvironmentVariableTarget.Process) ?? string.Empty;
-            string encodedLocation = Base64UrlTextEncoder.Encode(Encoding.UTF8.GetBytes(location.Name));
+            string encodedLocation = Base64UrlTextEncoder.Encode(Encoding.UTF8.GetBytes(location));
             string url = baseUrl + encodedLocation;
 
             // QR code generator: https://github.com/codebude/QRCoder/tree/master
@@ -35,6 +36,4 @@ namespace ltat.eventManagement
             }
         }
     }
-
-    public record Location(string Name);
 }

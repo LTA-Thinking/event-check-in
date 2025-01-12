@@ -265,3 +265,6 @@ __pycache__/
 
 # Local tests
 tests/*
+
+# API Keys
+site/js/keys.js

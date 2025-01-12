@@ -19,7 +19,7 @@ namespace ltat.eventManagement
         }
 
         [Function("AddNewEvent")]
-        public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequest req, [FromBody] Event evt)
+        public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequest req, [FromBody] EventInput evt)
         {
             var eventRecord = new EventTable()
             {
@@ -37,5 +37,5 @@ namespace ltat.eventManagement
         }
     }
 
-    public record Event(string name, string location);//, DateTime startDate, DateTime endDate);
+    public record EventInput(string name, string location);//, DateTime startDate, DateTime endDate);
 }
